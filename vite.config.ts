@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/my-curriculum-vitae/',
   plugins: [
     vue(),
     VitePWA({
@@ -15,7 +16,7 @@ export default defineConfig({
         theme_color: '#0b0e14',
         background_color: '#0b0e14',
         icons: [
-          { src: '/vite.svg', sizes: '192x192', type: 'image/svg+xml' }
+          { src: '/my-curriculum-vitae/vite.svg', sizes: '192x192', type: 'image/svg+xml' }
         ]
       }
     })
