@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/my-curriculum-vitae/sw.js', { scope: '/my-curriculum-vitae/' })})}
