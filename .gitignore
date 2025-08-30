@@ -1,4 +1,0 @@
-# GitHub Pages部署 - 只包含构建结果
-node_modules/
-.git/
-*.log
