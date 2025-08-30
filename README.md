@@ -101,5 +101,4 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 🔗 链接
 
-- [在线演示](https://your-username.github.io/your-repo-name)
-- [项目文档](项目优化总结.md)
+- [在线演示](https://aspirin-z.github.io/my-curriculum-vitae/)

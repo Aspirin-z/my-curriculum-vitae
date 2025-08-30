@@ -43,7 +43,10 @@ function toggleEpTheme() {
           </li>
         </ul>
       </nav>
-      <button class="theme" @click="toggleEpTheme">{{ useDark ? '浅色(EP)' : '深色(EP)' }}</button>
+      <button class="theme" @click="toggleEpTheme">
+        <span class="theme-icon">{{ useDark ? '🌙' : '☀️' }}</span>
+        <span class="theme-text">{{ useDark ? '浅色模式' : '深色模式' }}</span>
+      </button>
     </div>
   </header>
 </template>
@@ -55,38 +58,142 @@ function toggleEpTheme() {
   z-index: 50;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
+
 .container {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 12px 16px;
+  padding: 16px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .brand {
   display: flex;
   flex-direction: column;
 }
+
 .name {
   font-weight: 700;
+  font-size: 18px;
+  color: var(--brand);
+  letter-spacing: 0.5px;
 }
+
 .title {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
+  margin-top: 2px;
 }
-ul { display: flex; gap: 8px; list-style: none; padding: 0; margin: 0; }
-button {
-  padding: 8px 10px;
-  border-radius: 8px;
+
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li button {
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
   border: 1px solid transparent;
   background: transparent;
   color: var(--fg);
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
-button:hover { border-color: var(--brand); background: rgba(42,129,251,0.08); }
-@media (max-width: 720px) {
-  ul { flex-wrap: wrap; }
+
+li button:hover {
+  border-color: var(--brand);
+  background: rgba(52, 152, 219, 0.08);
+  color: var(--brand);
+  transform: translateY(-1px);
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--fg);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme:hover {
+  background: var(--bg);
+  border-color: var(--brand);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-icon {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px 16px;
+  }
+  
+  nav {
+    order: 3;
+    width: 100%;
+    margin-top: 12px;
+  }
+  
+  .container {
+    flex-wrap: wrap;
+  }
+  
+  ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  li button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .theme-text {
+    display: none;
+  }
+  
+  .theme {
+    padding: 6px 10px;
+  }
+  
+  .theme-icon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 16px;
+  }
+  
+  .title {
+    font-size: 12px;
+  }
 }
 </style>
 

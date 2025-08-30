@@ -2,7 +2,7 @@
 const links = [
   { name: 'Email', value: '2572640604@qq.com', href: 'mailto:2572640604@qq.com' },
   { name: 'Phone', value: '18507534569', href: 'tel:18507534569' },
-  { name: 'GitHub', value: '可添加：github.com/yourname', href: 'https://github.com/' },
+  { name: 'GitHub', value: 'Aspirin-z', href: 'https://github.com/Aspirin-z/my-curriculum-vitae' },
 ]
 </script>
 

@@ -33,16 +33,92 @@ const skills: Skill[] = [
 </template>
 
 <style scoped>
-.container { max-width: 1080px; margin: 0 auto; }
-h2 { margin: 0 0 16px; }
-.grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
-.skill { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
-.skill .name { font-weight: 600; margin-bottom: 4px; }
-.skill .level { color: var(--muted); font-size: 12px; }
-.skill .tags { margin-top: 6px; }
-.tag { display: inline-block; background: var(--tint); color: var(--brand); padding: 2px 6px; border-radius: 4px; font-size: 11px; margin-right: 4px; }
-@media (max-width: 720px) {
-  .grid { grid-template-columns: 1fr; }
+.section {
+  background: var(--bg-secondary);
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin: 0 0 32px;
+  font-size: 32px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--brand);
+  border-radius: 3px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.num {
+  color: var(--brand);
+}
+
+.bar {
+  height: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(to right, var(--brand), var(--brand-dark));
+  border-radius: 4px;
+  transition: width 1s ease-out;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
 }
 </style>
 
