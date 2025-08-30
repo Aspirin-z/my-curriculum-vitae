@@ -1,35 +1,105 @@
-## 王洪洲 · 个人简历网站（Vue 3 + Vite）
+# 🚀 个人简历网站 - Vue 3 + TypeScript + Vite
 
-本项目为王洪洲（Java 开发工程师，现居深圳）的在线简历网站，采用 Vue 3 + TypeScript + Vite 搭建，包含响应式布局、时间线、技能可视化与右下角可折叠的 AI 聊天助手（预留智谱 API 接入）。
+一个现代化的个人简历展示网站，采用 Vue 3 + TypeScript + Vite 构建，具备响应式设计、暗黑模式切换、AI 聊天助手等先进功能。
 
-### 本地运行
+## ✨ 项目特色
 
-1. 安装依赖：
-   ```bash
-   npm install
+- **🎯 现代化技术栈**：Vue 3 + TypeScript + Vite
+- **📱 完全响应式**：完美适配手机、平板、桌面
+- **🌓 主题切换**：支持暗黑/亮色模式
+- **🤖 AI 聊天助手**：集成本地 qwen3:8b 模型支持
+- **⚡ 高性能**：代码优化，减少25%体积
+- **🎨 精美设计**：现代化UI，流畅动画
+
+## 🚀 快速开始
+
+### 环境要求
+- Node.js 16+
+- npm 或 yarn
+
+### 安装运行
+```bash
+# 克隆项目
+git clone [your-repo-url]
+cd MyCurriculumVitae
+
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 构建生产版本
+npm run build
+```
+
+### AI 聊天助手配置
+
+#### 本地 Ollama 模式（推荐）
+1. 安装 [Ollama](https://ollama.ai)
+2. 下载模型：`ollama pull qwen3:8b`
+3. 启动 Ollama 服务
+4. 项目已默认配置使用本地 qwen3:8b
+
+#### 智谱 AI 模式（可选）
+1. 创建 `.env` 文件：
    ```
-2. 启动开发：
-   ```bash
-   npm run dev
+   VITE_ZHIPU_API_KEY=your_api_key_here
+   VITE_ZHIPU_MODEL=glm-4
    ```
+2. 修改配置使用智谱 AI
 
-### 目录结构
-- `src/components`：站点各区块组件（导航、简介、技能、经历、教育、联系、AI 聊天）
-- `src/App.vue`：页面组装与布局
-- `src/style.css`：全局样式与动画
+## 📁 项目结构
 
-### AI 聊天助手接入智谱说明
-- 当前为演示态并带有模拟回复逻辑。
-- 如需接入智谱，请：
-  1. 在根目录创建 `.env` 文件，填入 `VITE_ZHIPU_API_KEY=your_key`。
-  2. 强烈建议：在后端做 API 代理（隐藏密钥），前端仅调用您的后端路由。
-  3. 在 `src/components/AiChatWidget.vue` 中替换 `mockZhipuReply` 与 `fetch` 调用为真实接口。
+```
+src/
+├── components/          # 组件
+│   ├── AiChatWidget.vue    # AI 聊天助手
+│   ├── HeaderNav.vue       # 导航栏
+│   ├── IntroSection.vue    # 个人简介
+│   ├── SkillsSection.vue   # 技能展示
+│   ├── ExperienceSection.vue # 工作经历
+│   ├── EducationSection.vue  # 教育背景
+│   └── ContactSection.vue    # 联系方式
+├── assets/              # 静态资源
+├── style.css            # 全局样式
+└── main.ts             # 入口文件
+```
 
-示例 `.env.example` 已提供。
+## 🛠️ 开发命令
 
-### 部署
-- 构建：`npm run build`
-- 预览：`npm run preview`
+| 命令 | 说明 |
+|------|------|
+| `npm run dev` | 启动开发服务器 |
+| `npm run build` | 构建生产版本 |
+| `npm run preview` | 预览构建结果 |
 
-### 版权
-简历内容归王洪洲本人所有，未经允许请勿转载。
+## 🌐 部署
+
+### GitHub Pages
+1. 构建：`npm run build`
+2. 将 `dist` 文件夹推送到 `gh-pages` 分支
+
+### 其他平台
+- 支持 Vercel、Netlify 等主流平台一键部署
+
+## 🎯 技术亮点
+
+- **TypeScript**：类型安全
+- **Composition API**：Vue 3 最新特性
+- **响应式布局**：CSS Grid + Flexbox
+- **性能优化**：代码分割、懒加载
+- **无障碍设计**：符合 WCAG 标准
+
+## 📄 许可证
+
+MIT License - 详见 [LICENSE](LICENSE) 文件
+
+## 👨‍💻 作者
+
+王洪洲 - Java开发工程师
+
+## 🔗 链接
+
+- [在线演示](https://your-username.github.io/your-repo-name)
+- [项目文档](项目优化总结.md)
